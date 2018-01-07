@@ -15,13 +15,17 @@ if (function_exists('date_default_timezone_set')) {
 }
 require_once($_SERVER['DOCUMENT_ROOT']."/src/Hprose.php");
 
-use Hprose\Swoole\Http\Server;
+use Hprose\Http\Server;
 
 function getNotice($params){
     $re['param'] = $params;
     $re['code'] = "10000";
     return json_encode($re);
 }
+
+$server = new Server();
+$server->addFunction('getNotice');
+$server->start();
 
 //$params['company'] = SITE_ID;
 //$params['note_type'] = "1";
