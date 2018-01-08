@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/src/Hprose.php");
+require_once(__DIR__."/src/Hprose.php");
+
 use Hprose\Http\Server;
 
 function getNotice($params){
